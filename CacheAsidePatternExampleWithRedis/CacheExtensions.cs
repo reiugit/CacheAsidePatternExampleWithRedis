@@ -17,7 +17,7 @@ public static class CacheExtensions
         }
         catch (RedisConnectionException)
         {
-            return (false, "Redis must run locally!  Please start a docker container with Redis:  docker run -p 6379:6379 --name redis -d redis");
+            return (false, "Redis must run locally!  Please start a Redis docker container:  docker run -p 6379:6379 --name redis -d redis");
         }
 
         if (string.IsNullOrWhiteSpace(response))
