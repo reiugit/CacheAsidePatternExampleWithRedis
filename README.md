@@ -1,4 +1,4 @@
-# CacheAsidePatternExampleWithRedis
+# Cache-Aside Pattern example using Redis
 
 This example uses 'StackExchangeRedis' as an implementation of IDistributedCache.
 
