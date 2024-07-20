@@ -1,6 +1,6 @@
 @HostAddress = http://localhost:5272
 
-GET {{HostAddress}}/test-cacheaside/1//
+GET {{HostAddress}}/test-cacheaside/1/
 Accept: application/json
 
 ###
