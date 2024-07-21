@@ -13,9 +13,9 @@ var app = builder.Build();
 
 app.MapGet("/test-cacheaside/{id:int}", async (int id, [FromServices] IDistributedCache cache) =>
 {
-    var (wasCached, response) = await cache.GetOrCreateAsync(id, () => $"Response for Id {id}");
+    var (response, wasCachedWithRedis, cachedSinceInSeconds) = await cache.GetOrCreateWithCacheInfoAsync(id, () => $"Response for Id {id}");
 
-    return new { id, response, wasCached };
+    return new { id, response, wasCachedWithRedis, cachedSinceInSeconds };
 });
 
 app.Run();
